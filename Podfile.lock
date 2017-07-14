@@ -1,0 +1,73 @@
+PODS:
+  - Alamofire (4.4.0)
+  - JLRoutes (2.0.5)
+  - Masonry (1.0.2)
+  - Moya (8.0.3):
+    - Moya/Core (= 8.0.3)
+  - Moya/Core (8.0.3):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - PINCache (3.0.1-beta.4):
+    - PINCache/Arc-exception-safe (= 3.0.1-beta.4)
+    - PINCache/Core (= 3.0.1-beta.4)
+  - PINCache/Arc-exception-safe (3.0.1-beta.4):
+    - PINCache/Core
+  - PINCache/Core (3.0.1-beta.4):
+    - PINOperation (= 1.0.3)
+  - PINOperation (1.0.3)
+  - PINRemoteImage/Core (3.0.0-beta.9):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.0-beta.9):
+    - PINRemoteImage/Core
+  - PINRemoteImage/PINCache (3.0.0-beta.9):
+    - PINCache (= 3.0.1-beta.4)
+    - PINRemoteImage/Core
+  - R.swift (3.2.0):
+    - R.swift.Library (~> 3.0.2)
+  - R.swift.Library (3.0.2)
+  - Realm (2.6.2):
+    - Realm/Headers (= 2.6.2)
+  - Realm/Headers (2.6.2)
+  - Result (3.2.1)
+  - SQLite.swift (0.11.2):
+    - SQLite.swift/standard (= 0.11.2)
+  - SQLite.swift/standard (0.11.2)
+  - SwiftyJSON (3.1.4)
+  - Texture (2.3):
+    - Texture/PINRemoteImage (= 2.3)
+  - Texture/Core (2.3)
+  - Texture/PINRemoteImage (2.3):
+    - PINRemoteImage/iOS (= 3.0.0-beta.9)
+    - PINRemoteImage/PINCache
+    - Texture/Core
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - JLRoutes (~> 2.0.5)
+  - Masonry
+  - Moya
+  - R.swift
+  - Realm
+  - SQLite.swift
+  - SwiftyJSON
+  - Texture
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  JLRoutes: 2a5ee61d739b51a98c9d8112bee5149a19de8854
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
+  PINCache: a89c8f609232afac77128557bd12c861844423d7
+  PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
+  PINRemoteImage: e4e02e15a6f96cedbcef2abf1c9c1228dc9897d7
+  R.swift: 207a372a2b5977caef440c696a368009460641d1
+  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
+  Realm: 29222766425b9f831228f81b63f0e38a97a4d700
+  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
+  SQLite.swift: 670c3e9e0a806bbfd56a3de5d530768dc0e6fe7c
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Texture: de523401d6c296e63249021246a95bf7f90b3d9c
+
+PODFILE CHECKSUM: e24b578aafaafbda3e785e3ebd409a0b892bc4c0
+
+COCOAPODS: 1.2.1
