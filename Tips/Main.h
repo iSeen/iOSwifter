@@ -9,89 +9,56 @@
 #ifndef Main_h
 #define Main_h
 
-// APP启动时间
-1）main之前: 系统dylib（动态链接库）加载时间 自身App可执行文件加载时间和
+#pragma mark - App启动时间
+1）main之前: 系统dylib（动态链接库）加载时间 自身App可执行文件加载时间
 2）main之后: 执行didFinishLaunchingWithOptions:结束前的时间
 
-
-整个调用顺序:
-1）dyld 开始将程序二进制文件初始化
-2）交由ImageLoader 读取 image，其中包含了我们的类，方法等各种符号（Class、Protocol 、Selector、 IMP）
-3）由于runtime 向dylid 绑定了回调，当image加载到内存后，dylid会通知runtime进行处理
-4）runtime 接手后调用map_images做解析和处理
-5）接下来load_images 中调用call_load_methods方法，遍历所有加载进来的Class，按继承层次依次调用Class的+load和其他Category的+load方法
-6）至此 所有的信息都被加载到内存中
-7）最后dyld调用真正的main函数
-注意：dyld会缓存上一次把信息加载内存的缓存，所以第二次比第一次启动快一点;
-
-
-
-// main之前
-加载可执行文件（自身app的所有.o文件集合）
-加载dyld (dyld是专门用来加载动态链接库的库)
-dyld根据可执行文件的依赖，递归加载所有的依赖动态链接库 (动态链接库包括：iOS中用到的所有系统的framework，加载OC runtime方法的libobjec，系统级别的libSystem, 例如libdispatch(GCD)he libsystem_blocks(Block) )
-所有动态链接库和App静态库.a和所有类文件编译后的.o文件，最终都由dyld加载到内存
-
-
-Ps:
-动态链接库库是相对于系统来讲
-可执行文件是相对于App本身来讲
-
-每个app 都是以镜像为单位进行加载: {
-    1）镜像（Mirroring）是冗余的一种类型，一个磁盘上的数据在另一个磁盘上存在一个完全相同的副本即为镜像。
-    2）镜像是一种文件存储形式，可以把许多文件做成一个镜像文件。
-    3）每个镜像又都有个ImageLoader类来负责加载，一一对应的关系.
+#pragma mark - main之前的事件
+main之前: 系统内核做好启动程序的初始准备后, 交由 dyld (Apple 的动态链接器, The Dynamic Link Editor) 主导处理
+1)dyld 将程序二进制文件初始化
+2)交由 ImageLoader 读取 image, 将 image 加载到内存 {
+    1)将动态链接的 image 递归加载
+    2)从 image 递归加载所有符号
+    Ps: image 非图片, 二进制文件, 包含类、方法等各种符号（Class，Protocol，Selector，IMP，…）
+    ImageLoader作用: 将image加载进内存，且每一个文件对应一个ImageLoader实例来负责加载。
 }
-
-framework 是动态链接库和相应资源包含在一起的一个文件结构.
-
-
-
-动态链接库的加载步骤: {
-    1）load dylibs image 读取库镜像文件: {
-        1.1）分析所依赖的动态库
-        1.2）找到动态库的mach-o 文件(Windows下文件是PE文件，OS X和iOS中可执行文件是Mach-o格式)
-        1.3）打开文件
-        1.4）验证文件
-        1.5）在系统核心注册文件签名
-        1.6）对动态库的每一个segment调用mmap()
-    }
-    2）Rebase image重定位镜像, Bind image组装镜像 {
-        由于ASLR（address apace layout randomization）的存在，可执行文件和动态链接库在虚拟内存中的加载地址每次启动都不固定，所以需要两个修复镜像中的资源地址，来指向正确的地址: {
-            1）rabase 修复的是指当前镜像内存的资源指针；
-            bind   指向的是镜像外部的资源指针
-            2）rebase步骤先进行，需要把镜像读入内存，并以page为单位进行加密验证，保证不会被篡改；
-            bind 在其后进行，由于要查询表符号表，来指向镜像的资源；
-        }
-    }
-    
-    4）Objc setup 设置对象: (静态调整（fix up）, 在修改__DATA segment中内容) {
-        1) 注册objc类
-        2）把category的定义插入方法列表
-        3）保证每个selector唯一
-    }
-    
-    5）initializers 初始化: (动态调整，开始在堆和堆栈写入内容) {
-        1）objc 的 + load 函数
-        2）C++的构造函数属性函数 形如 attribute((contructor))void DoSomeInitializationWork()
-        3）非基本类型的C++静态全局变量的创建（通常是类或结构体）（non-trivial initializer）重大初始化
+3)runtime 调用 map_images 做解析和处理 (因 runtime 向 dyld 绑定了回调，当 image 加载到内存后，dyld 会通知 runtime作处理) {
+    1>快速查询，类和分类的方法列表中是否含有 load 方法，如果没有，直接返回
+    2>递归查询所有的 load 方法，并存储起来
+    3>load_images 中调用 call_load_methods 方法, 依次执行已经被存储的 load 方法 {
+        依次执行存储的 load 方法，父类 -> 子类 -> 分类
+        Ps:
+        首先，保证是首次执行， load 方法只会执行一次;
+        创建自动释放池，在池内执行方法，优化性能;
+        do {} while 循环执行，直到数组为空，且分类方法也执行完毕，不再有新的分类方法;
     }
 }
+4)至此,可执行文件和动态库所有符号都已经按格式成功加载到内存中，被 runtime 所管理
+5)之后,runtime 动态添加的 Class、swizzle 等方法生效
+6)最后,dyld调用真正的main函数 (dyld 会清理现场，将调用栈回归)
+
+Ps：dyld会缓存上一次把信息加载内存的缓存，所以第二次比第一次启动快一点;
 
 
 #pragma mark - load and initialize
-相同点：{
-    在不考虑主动使用的情况下，系统最多会调用一次
-    如果父类和子类都被调用，父类的调用一定在子类之前
-    都能自动调用父类方法
-    都可以手动调用
+// initialize
+1) + (void)initialize 消息是在该类接收到其第一个消息之前调用。{
+    自动调用 NSObject 的 + (void)load 消息不被视为第一个消息;
+    手动调用 NSObject 的 + (void)load 消息，则会引起 + (void)initialize 的调用;
+    如果没有向 NSObject 发送第一个消息，+ (void)initialize 则不会被自动调用;
 }
 
-不同点：{
-    load在对象没有实例化情况下也会调用
-    initialize在对象实例化时才会调用
-    load 方法调用在initialize方法之前
+2) 在应用程序生命周期中，runtime 只会向每个类发送一次 + (void)initialize 消息. {
+    如果该类是子类，且该子类中没有实现 + (void)initialize 消息，或者子类显示调用父类实现 [super initialize], 那么则会调用其父类的实现. 也就是说，父类的 + (void)initialize 可能会被调用多次。
 }
+
+3) 如果类包含分类，且分类重写了initialize方法，那么则会调用分类的 initialize 实现，而原类的该方法实现不会被调用，这个机制同 NSObject 的其他方法(除 + (void)load 方法) 一样，即如果原类同该类的分类包含有相同的方法实现，那么原类的该方法被隐藏而无法被调用。
+
+4) 父类的 initialize 方法先于子类的 initialize 方法调用。
+
+// load
+1) + (void)load 会在类或者类的分类添加到 Objective-c runtime 时调用，该调用发生在 application:willFinishLaunchingWithOptions: 调用之前调用。
+2) 父类的 +load 方法先于子类的 +load 方法调用，类本身的 +load 方法调用先于分类的 +load 方法调用。
 
 
 

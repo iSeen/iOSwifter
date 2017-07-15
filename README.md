@@ -15,8 +15,10 @@ iOSwifter
 [ObjC 中国](https://objccn.io)
 
 博客  
-[王巍](https://onevcat.com/#blog) 
-[StackOverflowError](https://zhuanlan.zhihu.com/cocoanotes)
+[优秀Blog 学习整理](https://github.com/tangqiaoboy/iOSBlogCN)  
+[王巍](https://onevcat.com/#blog)   
+[StackOverflowError](https://zhuanlan.zhihu.com/cocoanotes)  
+[2017 干货文章](http://www.jianshu.com/p/711729623b03)
 
 开源项目
 [Swift30Projects](https://github.com/soapyigu/Swift30Projects)
