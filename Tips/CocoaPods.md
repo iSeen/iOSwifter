@@ -149,6 +149,13 @@
 	2.other linker flags 加一个 $(inherited)
 
 
+Q1: Unable to find a specification for   
+
+	 A1: 
+    pod repo remove master  
+    pod setup  
+
+
 ## <a id="Podfile"></a>Podfile
 CocoaPods通过Ruby实现, Podfile也是通过ruby语法编写.
 

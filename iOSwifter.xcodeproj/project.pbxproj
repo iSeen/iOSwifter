@@ -58,6 +58,10 @@
 		22ABC01F1F1A153C00685821 /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBFFE1F1A153C00685821 /* SampleModel.swift */; };
 		22ABC0201F1A153C00685821 /* SwiftDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBFFF1F1A153C00685821 /* SwiftDescription.swift */; };
 		22ABC0211F1A153C00685821 /* ZNIBDesignableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC0021F1A153C00685821 /* ZNIBDesignableView.m */; };
+		69AB41BF1F1BB32A003913BE /* RACSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AB41B51F1BB32A003913BE /* RACSampleViewController.m */; };
+		69AB41C01F1BB32A003913BE /* RACSampleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AB41B81F1BB32A003913BE /* RACSampleModel.m */; };
+		69AB41C11F1BB32A003913BE /* RACSampleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AB41BB1F1BB32A003913BE /* RACSampleViewModel.m */; };
+		69AB41C21F1BB32A003913BE /* RACSampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AB41BE1F1BB32A003913BE /* RACSampleView.m */; };
 		E485C169901456DD5CFAB25F /* Pods_iOSwifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9ED517C575AD5E28966542 /* Pods_iOSwifter.framework */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +162,14 @@
 		22ABBFFF1F1A153C00685821 /* SwiftDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDescription.swift; sourceTree = "<group>"; };
 		22ABC0011F1A153C00685821 /* ZNIBDesignableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNIBDesignableView.h; sourceTree = "<group>"; };
 		22ABC0021F1A153C00685821 /* ZNIBDesignableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNIBDesignableView.m; sourceTree = "<group>"; };
+		69AB41B41F1BB329003913BE /* RACSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSampleViewController.h; sourceTree = "<group>"; };
+		69AB41B51F1BB32A003913BE /* RACSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACSampleViewController.m; sourceTree = "<group>"; };
+		69AB41B71F1BB32A003913BE /* RACSampleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSampleModel.h; sourceTree = "<group>"; };
+		69AB41B81F1BB32A003913BE /* RACSampleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACSampleModel.m; sourceTree = "<group>"; };
+		69AB41BA1F1BB32A003913BE /* RACSampleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSampleViewModel.h; sourceTree = "<group>"; };
+		69AB41BB1F1BB32A003913BE /* RACSampleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACSampleViewModel.m; sourceTree = "<group>"; };
+		69AB41BD1F1BB32A003913BE /* RACSampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSampleView.h; sourceTree = "<group>"; };
+		69AB41BE1F1BB32A003913BE /* RACSampleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACSampleView.m; sourceTree = "<group>"; };
 		BDDC47E0ACDC6191B3B7EF39 /* Pods-iOSwifter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSwifter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSwifter/Pods-iOSwifter.debug.xcconfig"; sourceTree = "<group>"; };
 		FC9ED517C575AD5E28966542 /* Pods_iOSwifter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSwifter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -281,6 +293,7 @@
 		22ABBF5F1F1A038900685821 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				69AB41B21F1BB07A003913BE /* ReactiveCocoa */,
 				22ABBFD01F1A153C00685821 /* Animation */,
 				22ABBFF01F1A153C00685821 /* InterfaceBuilder */,
 				22ABBFF51F1A153C00685821 /* Sample */,
@@ -457,6 +470,53 @@
 				FC9ED517C575AD5E28966542 /* Pods_iOSwifter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69AB41B21F1BB07A003913BE /* ReactiveCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				69AB41B31F1BB329003913BE /* Controllers */,
+				69AB41B61F1BB32A003913BE /* Models */,
+				69AB41B91F1BB32A003913BE /* ViewModels */,
+				69AB41BC1F1BB32A003913BE /* Views */,
+			);
+			path = ReactiveCocoa;
+			sourceTree = "<group>";
+		};
+		69AB41B31F1BB329003913BE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				69AB41B41F1BB329003913BE /* RACSampleViewController.h */,
+				69AB41B51F1BB32A003913BE /* RACSampleViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		69AB41B61F1BB32A003913BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				69AB41B71F1BB32A003913BE /* RACSampleModel.h */,
+				69AB41B81F1BB32A003913BE /* RACSampleModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		69AB41B91F1BB32A003913BE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				69AB41BA1F1BB32A003913BE /* RACSampleViewModel.h */,
+				69AB41BB1F1BB32A003913BE /* RACSampleViewModel.m */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		69AB41BC1F1BB32A003913BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				69AB41BD1F1BB32A003913BE /* RACSampleView.h */,
+				69AB41BE1F1BB32A003913BE /* RACSampleView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -655,6 +715,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22ABC0091F1A153C00685821 /* CircularView.m in Sources */,
+				69AB41C11F1BB32A003913BE /* RACSampleViewModel.m in Sources */,
 				22ABBF811F1A084F00685821 /* AsyncDisplayKitController.swift in Sources */,
 				22ABC0191F1A153C00685821 /* InterfaceDetailController.swift in Sources */,
 				22ABC0051F1A153C00685821 /* CABasicAnimationController.swift in Sources */,
@@ -667,8 +728,10 @@
 				22ABBF901F1A104A00685821 /* UIView+Extension.swift in Sources */,
 				22ABC01D1F1A153C00685821 /* BaseModel.swift in Sources */,
 				22ABBFCF1F1A12B100685821 /* InterfaceBuilder.md in Sources */,
+				69AB41C01F1BB32A003913BE /* RACSampleModel.m in Sources */,
 				22ABBF8E1F1A104A00685821 /* String+Extension.swift in Sources */,
 				22ABC0171F1A153C00685821 /* InterfaceController.swift in Sources */,
+				69AB41C21F1BB32A003913BE /* RACSampleView.m in Sources */,
 				22ABBF7D1F1A04AF00685821 /* ASingletonClass.m in Sources */,
 				22ABC01E1F1A153C00685821 /* ObjcDescription.swift in Sources */,
 				22ABC0081F1A153C00685821 /* CATransitionController.swift in Sources */,
@@ -681,6 +744,7 @@
 				22ABC0031F1A153C00685821 /* Animation.md in Sources */,
 				22ABC0111F1A153C00685821 /* WaterWaveController.swift in Sources */,
 				22ABBF7C1F1A04AF00685821 /* AppDelegateServer.m in Sources */,
+				69AB41BF1F1BB32A003913BE /* RACSampleViewController.m in Sources */,
 				22ABBF6D1F1A038900685821 /* AppDelegate.m in Sources */,
 				22ABBF891F1A101300685821 /* Constant.swift in Sources */,
 				22ABC0101F1A153C00685821 /* ZNSphereController.swift in Sources */,
@@ -825,6 +889,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = DZNJ4F4E32;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSwifter/Main/iOSwifter.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/iOSwifter/Main/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iSeen.iOSwifter;
@@ -842,6 +908,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = DZNJ4F4E32;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSwifter/Main/iOSwifter.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/iOSwifter/Main/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iSeen.iOSwifter;

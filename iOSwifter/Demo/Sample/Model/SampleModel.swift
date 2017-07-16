@@ -1,5 +1,5 @@
 //
-//  SampleModel.swift
+//  RACSampleModel.swift
 //  iOSwift
 //
 //  Created by ZhangNing on 2016/10/11.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SampleModel: NSObject, NSCoding {
+class RACSampleModel: NSObject, NSCoding {
 
     /// 属性
     var sampleStr: String?

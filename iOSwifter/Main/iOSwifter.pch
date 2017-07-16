@@ -6,10 +6,19 @@
 //  Copyright © 2017年 iOSwifter. All rights reserved.
 //
 
+/*
+ 添加pch
+ 
+ 1.Command+N，打开新建文件窗口：ios->other->PCH file，创建一个pch文件
+ 2.工程的TARGETS里Building Setting中搜索Prefix Header，然后把Precompile Prefix Header右边的NO改为Yes
+ (将Precompile Prefix Header为YES，预编译后的pch文件会被缓存起来，可以提高编译速度)
+ 3.Prefix Header右边双击，添加刚刚创建的pch文件的工程路径，添加格式：“$(SRCROOT)/根目录的下一级目录../../xxxxx.pch”
+ 
+ */
+
 #ifndef iOSwifter_pch
 #define iOSwifter_pch
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 #endif /* iOSwifter_pch */

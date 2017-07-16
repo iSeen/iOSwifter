@@ -1,19 +1,4 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
-    - AFNetworking/NSURLSession
   - Alamofire (4.4.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
@@ -28,28 +13,16 @@ PODS:
   - Moya/Core (8.0.3):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - PINCache (3.0.1-beta.4):
-    - PINCache/Arc-exception-safe (= 3.0.1-beta.4)
-    - PINCache/Core (= 3.0.1-beta.4)
-  - PINCache/Arc-exception-safe (3.0.1-beta.4):
-    - PINCache/Core
-  - PINCache/Core (3.0.1-beta.4):
-    - PINOperation (= 1.0.3)
-  - PINOperation (1.0.3)
-  - PINRemoteImage/Core (3.0.0-beta.9):
-    - PINOperation
-  - PINRemoteImage/iOS (3.0.0-beta.9):
-    - PINRemoteImage/Core
-  - PINRemoteImage/PINCache (3.0.0-beta.9):
-    - PINCache (= 3.0.1-beta.4)
-    - PINRemoteImage/Core
   - R.swift (3.2.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
-  - ReactiveCocoa (5.0.3):
-    - ReactiveSwift (~> 1.1)
-  - ReactiveSwift (1.1.1):
-    - Result (~> 3.2)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
   - Realm (2.6.2):
     - Realm/Headers (= 2.6.2)
   - Realm/Headers (2.6.2)
@@ -57,24 +30,13 @@ PODS:
   - RxCocoa (3.0.0-beta.2):
     - RxSwift (~> 3.0.0-beta.2)
   - RxSwift (3.0.0-beta.2)
-  - SDWebImage (4.0.0):
-    - SDWebImage/Core (= 4.0.0)
-  - SDWebImage/Core (4.0.0)
   - SnapKit (3.0.2)
   - SQLite.swift (0.11.2):
     - SQLite.swift/standard (= 0.11.2)
   - SQLite.swift/standard (0.11.2)
   - SwiftyJSON (3.1.4)
-  - Texture (2.3):
-    - Texture/PINRemoteImage (= 2.3)
-  - Texture/Core (2.3)
-  - Texture/PINRemoteImage (2.3):
-    - PINRemoteImage/iOS (= 3.0.0-beta.9)
-    - PINRemoteImage/PINCache
-    - Texture/Core
 
 DEPENDENCIES:
-  - AFNetworking (~> 3.0)
   - Alamofire (~> 4.4)
   - AlamofireImage (~> 3.1)
   - FMDB
@@ -83,18 +45,15 @@ DEPENDENCIES:
   - Masonry
   - Moya
   - R.swift
-  - ReactiveCocoa (~> 5.0.0)
+  - ReactiveCocoa (~> 2.5)
   - Realm
   - RxCocoa (= 3.0.0-beta.2)
   - RxSwift (= 3.0.0-beta.2)
-  - SDWebImage
   - SnapKit (~> 3.0.2)
   - SQLite.swift
   - SwiftyJSON
-  - Texture
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
@@ -102,23 +61,17 @@ SPEC CHECKSUMS:
   JLRoutes: 2a5ee61d739b51a98c9d8112bee5149a19de8854
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
-  PINCache: a89c8f609232afac77128557bd12c861844423d7
-  PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
-  PINRemoteImage: e4e02e15a6f96cedbcef2abf1c9c1228dc9897d7
   R.swift: 207a372a2b5977caef440c696a368009460641d1
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
-  ReactiveCocoa: 066a855f613fb72f68258771095805fdb10312d2
-  ReactiveSwift: 2489549e3231a6ff68ec99f3d320bb264f10ba0a
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   Realm: 29222766425b9f831228f81b63f0e38a97a4d700
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   RxCocoa: 1dd105d8a4e18034ccd7bd6d136445363ce67c8e
   RxSwift: 0ea939d7d97cb70657190ffde8dc2a9b455778fc
-  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SQLite.swift: 670c3e9e0a806bbfd56a3de5d530768dc0e6fe7c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  Texture: de523401d6c296e63249021246a95bf7f90b3d9c
 
-PODFILE CHECKSUM: f7a8589f11d62679388d427dcc6eaac264a99b24
+PODFILE CHECKSUM: 4ffa3173e648495754cab06b44336583dac55669
 
 COCOAPODS: 1.2.1

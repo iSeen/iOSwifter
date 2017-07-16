@@ -5,82 +5,54 @@ inhibit_all_warnings!
 use_frameworks!
 
 
-# 网络
-def network_pods
-  pod 'AFNetworking', '~> 3.0'
-  pod 'Alamofire', '~> 4.4'
-  pod 'AlamofireImage', '~> 3.1'
-  pod 'SDWebImage'
-  pod 'SwiftyJSON'
-  pod 'Moya'
+# FRP
+def frp_pods
+  pod 'RxSwift',    '3.0.0-beta.2'
+  pod 'RxCocoa',    '3.0.0-beta.2'
+  pod 'ReactiveCocoa', '~> 2.5'
 end
 
 
-# 存储
-def storage_pods
-  pod 'FMDB'
-  pod 'Realm'
-  pod 'SQLite.swift'
+# 网络数据
+def netWorkData_pods
+    pod 'Alamofire', '~> 4.4'
+    pod 'Moya'
+    pod 'AlamofireImage', '~> 3.1'
+
+    pod 'SwiftyJSON'
+
+    pod 'FMDB'
+    pod 'Realm'
+    pod 'SQLite.swift'
 end
 
 
 # UI
 def ui_pods
-  pod "Texture"
-  #pod 'RAMAnimatedTabBarController'
-end
-
-
-# autoLayout
-def autoLayout_pods
-  pod 'Masonry'
-  pod 'SnapKit', '~> 3.0.2'
-end
-
-
-# Resource
-def resource_Pods
-  pod 'R.swift'
-end
-
-
-# FRP
-def frp_Pods
-  pod 'RxSwift',    '3.0.0-beta.2'
-  pod 'RxCocoa',    '3.0.0-beta.2'
-  pod 'ReactiveCocoa', '~> 5.0.0'
-end
-
-
-# 路由跳转
-def route_Pods
-    pod 'JLRoutes', '~> 2.0.5'
-end
-
-
-# 键盘
-def keyboard_Pods
-    pod 'IQKeyboardManagerSwift'
-end
-
-
-# View
-def view_Pods
+    #pod 'RAMAnimatedTabBarController'
     #pod 'SDCycleScrollView','~> 1.66'
+    
+    pod 'Texture'
+    pod 'IQKeyboardManagerSwift'
+    
+    pod 'Masonry'
+    pod 'SnapKit', '~> 3.0.2'
+end
+
+
+# other
+def other_pods
+  pod 'R.swift'
+  pod 'JLRoutes', '~> 2.0.5'
 end
 
 
 
 target 'iOSwifter' do
-  network_pods
-  storage_pods
+  frp_pods
+  netWorkData_pods
   ui_pods
-  autoLayout_pods 
-  resource_Pods
-  frp_Pods
-  route_Pods
-  keyboard_Pods
-  view_Pods
+  other_pods
 end
 
 
