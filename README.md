@@ -1,5 +1,4 @@
-# iOSwifter
-iOSwifter  
+# iOSwifter  
 
 国外  
 [苹果官方Swift](https://developer.apple.com/swift/resources)  
@@ -28,4 +27,7 @@ Crash
 [PLCrashReporter](https://www.plcrashreporter.org)
 [Bugly](https://bugly.qq.com/v2/index)
 
-
+## iOS
+[]
+[iOS10 & Xcode8 开发适配](https://github.com/iSeen/iOS10_Tips)  
+[ Xcode7.2与iOS9之坑](http://www.cnblogs.com/znios/p/4917704.html)
