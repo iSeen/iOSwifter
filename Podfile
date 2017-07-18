@@ -21,18 +21,21 @@ def netWorkData_pods
     pod 'AlamofireImage', '~> 3.1'
 
     pod 'SwiftyJSON'
+    
+    pod 'ReSwift'
 
+    pod 'WCDB'
     pod 'FMDB'
-    pod 'Realm'
-    pod 'SQLite.swift'
+#    pod 'Realm'
+#    pod 'SQLite.swift'
 end
 
 
 # UI
 def ui_pods
-    #pod 'RAMAnimatedTabBarController'
-    #pod 'SDCycleScrollView','~> 1.66'
-    
+#    pod 'RAMAnimatedTabBarController'
+#    pod 'SDCycleScrollView','~> 1.66'
+
     pod 'Texture'
     pod 'IQKeyboardManagerSwift'
     

@@ -2,9 +2,9 @@ PODS:
   - Alamofire (4.4.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
-  - FMDB (2.6.2):
-    - FMDB/standard (= 2.6.2)
-  - FMDB/standard (2.6.2)
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
   - IQKeyboardManagerSwift (4.0.9)
   - JLRoutes (2.0.5)
   - Masonry (1.0.2)
@@ -38,10 +38,8 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
-  - Realm (2.6.2):
-    - Realm/Headers (= 2.6.2)
-  - Realm/Headers (2.6.2)
   - Result (3.2.1)
+  - ReSwift (4.0.0)
   - RxCocoa (3.4.0):
     - RxSwift (~> 3.4)
   - RxDataSources (1.0.3):
@@ -49,9 +47,6 @@ PODS:
     - RxSwift (~> 3.0)
   - RxSwift (3.4.0)
   - SnapKit (3.0.2)
-  - SQLite.swift (0.11.2):
-    - SQLite.swift/standard (= 0.11.2)
-  - SQLite.swift/standard (0.11.2)
   - SwiftyJSON (3.1.4)
   - Texture (2.3):
     - Texture/PINRemoteImage (= 2.3)
@@ -60,6 +55,7 @@ PODS:
     - PINRemoteImage/iOS (= 3.0.0-beta.9)
     - PINRemoteImage/PINCache
     - Texture/Core
+  - WCDB (1.0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -71,19 +67,19 @@ DEPENDENCIES:
   - Moya
   - R.swift
   - ReactiveCocoa (~> 2.5)
-  - Realm
+  - ReSwift
   - RxCocoa (~> 3.0)
   - RxDataSources (~> 1.0)
   - RxSwift (~> 3.0)
   - SnapKit (~> 3.0.2)
-  - SQLite.swift
   - SwiftyJSON
   - Texture
+  - WCDB
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
   JLRoutes: 2a5ee61d739b51a98c9d8112bee5149a19de8854
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
@@ -94,16 +90,16 @@ SPEC CHECKSUMS:
   R.swift: 207a372a2b5977caef440c696a368009460641d1
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
-  Realm: 29222766425b9f831228f81b63f0e38a97a4d700
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
+  ReSwift: f058ef13b46ae5f463f10605ccbbb7fb04424d8d
   RxCocoa: d14ef6b6029e1ddc6e966508c09289090de68ff9
   RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
   RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
-  SQLite.swift: 670c3e9e0a806bbfd56a3de5d530768dc0e6fe7c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   Texture: de523401d6c296e63249021246a95bf7f90b3d9c
+  WCDB: 78aff489677b50a4f2ebbf4df4bab5116c9665b1
 
-PODFILE CHECKSUM: 8bc43943db9fbe343d818a2374de4b557819039e
+PODFILE CHECKSUM: 8efedbedae8248d747106742e940876de4ac5f12
 
 COCOAPODS: 1.2.1

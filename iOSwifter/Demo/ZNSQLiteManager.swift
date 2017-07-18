@@ -41,7 +41,7 @@ class ZNSQLiteManager: NSObject {
             "question TEXT, \n"
         
         dbQueue.inDatabase { (db) in
-            if (db?.executeStatements(sql))! {
+            if (db.executeStatements(sql)) {
                 print("\(tableName)表创建成功")
             } else {
                 print("\(tableName)表创建失败")
