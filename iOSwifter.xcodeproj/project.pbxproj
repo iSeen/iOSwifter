@@ -19,14 +19,12 @@
 		22ABBF7D1F1A04AF00685821 /* ASingletonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBF7B1F1A04AF00685821 /* ASingletonClass.m */; };
 		22ABBF7F1F1A051200685821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22ABBF7E1F1A051200685821 /* Assets.xcassets */; };
 		22ABBF811F1A084F00685821 /* AsyncDisplayKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBF801F1A084F00685821 /* AsyncDisplayKitController.swift */; };
-		22ABBF831F1A088400685821 /* CocoaPods.md in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBF821F1A088400685821 /* CocoaPods.md */; };
 		22ABBF851F1A0F7200685821 /* Swift_Concept.md in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBF841F1A0F7200685821 /* Swift_Concept.md */; };
 		22ABBF871F1A0FF000685821 /* ZNSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBF861F1A0FF000685821 /* ZNSQLiteManager.swift */; };
 		22ABBF891F1A101300685821 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBF881F1A101300685821 /* Constant.swift */; };
 		22ABBF8E1F1A104A00685821 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBF8B1F1A104A00685821 /* String+Extension.swift */; };
 		22ABBF8F1F1A104A00685821 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBF8C1F1A104A00685821 /* UIColor+Extension.swift */; };
 		22ABBF901F1A104A00685821 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBF8D1F1A104A00685821 /* UIView+Extension.swift */; };
-		22ABBFCF1F1A12B100685821 /* InterfaceBuilder.md in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBFCE1F1A12B100685821 /* InterfaceBuilder.md */; };
 		22ABC0031F1A153C00685821 /* Animation.md in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBFD11F1A153C00685821 /* Animation.md */; };
 		22ABC0041F1A153C00685821 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBFD21F1A153C00685821 /* AnimationController.swift */; };
 		22ABC0051F1A153C00685821 /* CABasicAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABBFD31F1A153C00685821 /* CABasicAnimationController.swift */; };
@@ -78,6 +76,11 @@
 		69AB41C01F1BB32A003913BE /* RACSampleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AB41B81F1BB32A003913BE /* RACSampleModel.m */; };
 		69AB41C11F1BB32A003913BE /* RACSampleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AB41BB1F1BB32A003913BE /* RACSampleViewModel.m */; };
 		69AB41C21F1BB32A003913BE /* RACSampleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AB41BE1F1BB32A003913BE /* RACSampleView.m */; };
+		69ADE6321F1E5DBA0093FBD3 /* AutoLayout.md in Sources */ = {isa = PBXBuildFile; fileRef = 69ADE6311F1E5DBA0093FBD3 /* AutoLayout.md */; };
+		69ADE6341F1E60A20093FBD3 /* Command.md in Sources */ = {isa = PBXBuildFile; fileRef = 69ADE6331F1E60A20093FBD3 /* Command.md */; };
+		69ADE6361F1E61A50093FBD3 /* Tool_Install.md in Sources */ = {isa = PBXBuildFile; fileRef = 69ADE6351F1E61A50093FBD3 /* Tool_Install.md */; };
+		69ADE63B1F1E62860093FBD3 /* NSDictionary+XHLogHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ADE6381F1E62860093FBD3 /* NSDictionary+XHLogHelper.m */; };
+		69ADE63C1F1E62860093FBD3 /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 69ADE63A1F1E62860093FBD3 /* UIButton+ImageTitleSpacing.m */; };
 		E485C169901456DD5CFAB25F /* Pods_iOSwifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9ED517C575AD5E28966542 /* Pods_iOSwifter.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +110,6 @@
 		22ABBF411F1A020D00685821 /* iOSwifterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSwifterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22ABBF451F1A020D00685821 /* iOSwifterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSwifterUITests.m; sourceTree = "<group>"; };
 		22ABBF471F1A020D00685821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22ABBF541F1A031B00685821 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
 		22ABBF551F1A031B00685821 /* Main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main.h; sourceTree = "<group>"; };
 		22ABBF561F1A031B00685821 /* MVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVC.h; sourceTree = "<group>"; };
 		22ABBF571F1A031B00685821 /* Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Runtime.h; sourceTree = "<group>"; };
@@ -129,7 +131,6 @@
 		22ABBF7B1F1A04AF00685821 /* ASingletonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASingletonClass.m; sourceTree = "<group>"; };
 		22ABBF7E1F1A051200685821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22ABBF801F1A084F00685821 /* AsyncDisplayKitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncDisplayKitController.swift; sourceTree = "<group>"; };
-		22ABBF821F1A088400685821 /* CocoaPods.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CocoaPods.md; sourceTree = "<group>"; };
 		22ABBF841F1A0F7200685821 /* Swift_Concept.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Swift_Concept.md; sourceTree = "<group>"; };
 		22ABBF861F1A0FF000685821 /* ZNSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZNSQLiteManager.swift; sourceTree = "<group>"; };
 		22ABBF881F1A101300685821 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -137,7 +138,6 @@
 		22ABBF8C1F1A104A00685821 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		22ABBF8D1F1A104A00685821 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		22ABBF911F1A113200685821 /* Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
-		22ABBFCE1F1A12B100685821 /* InterfaceBuilder.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = InterfaceBuilder.md; sourceTree = "<group>"; };
 		22ABBFD11F1A153C00685821 /* Animation.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Animation.md; sourceTree = "<group>"; };
 		22ABBFD21F1A153C00685821 /* AnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
 		22ABBFD31F1A153C00685821 /* CABasicAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CABasicAnimationController.swift; sourceTree = "<group>"; };
@@ -202,6 +202,13 @@
 		69AB41BB1F1BB32A003913BE /* RACSampleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACSampleViewModel.m; sourceTree = "<group>"; };
 		69AB41BD1F1BB32A003913BE /* RACSampleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSampleView.h; sourceTree = "<group>"; };
 		69AB41BE1F1BB32A003913BE /* RACSampleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACSampleView.m; sourceTree = "<group>"; };
+		69ADE6311F1E5DBA0093FBD3 /* AutoLayout.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = AutoLayout.md; sourceTree = "<group>"; };
+		69ADE6331F1E60A20093FBD3 /* Command.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Command.md; sourceTree = "<group>"; };
+		69ADE6351F1E61A50093FBD3 /* Tool_Install.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Tool_Install.md; sourceTree = "<group>"; };
+		69ADE6371F1E62860093FBD3 /* NSDictionary+XHLogHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XHLogHelper.h"; sourceTree = "<group>"; };
+		69ADE6381F1E62860093FBD3 /* NSDictionary+XHLogHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XHLogHelper.m"; sourceTree = "<group>"; };
+		69ADE6391F1E62860093FBD3 /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
+		69ADE63A1F1E62860093FBD3 /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
 		BDDC47E0ACDC6191B3B7EF39 /* Pods-iOSwifter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSwifter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSwifter/Pods-iOSwifter.debug.xcconfig"; sourceTree = "<group>"; };
 		FC9ED517C575AD5E28966542 /* Pods_iOSwifter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSwifter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -296,7 +303,7 @@
 		22ABBF531F1A031B00685821 /* Tips */ = {
 			isa = PBXGroup;
 			children = (
-				22ABBF541F1A031B00685821 /* Command.h */,
+				69ADE6331F1E60A20093FBD3 /* Command.md */,
 				22ABBF551F1A031B00685821 /* Main.h */,
 				22ABBF561F1A031B00685821 /* MVC.h */,
 				22ABBF571F1A031B00685821 /* Runtime.h */,
@@ -304,10 +311,10 @@
 				22ABBF591F1A031B00685821 /* Xcode.h */,
 				22ABBF911F1A113200685821 /* Image.h */,
 				22B28A751F1DDD1000BA3541 /* DevTool.md */,
+				69ADE6351F1E61A50093FBD3 /* Tool_Install.md */,
 				22E8EC351F1C99EE00A73727 /* iOS11_Xcode9.md */,
-				22ABBFCE1F1A12B100685821 /* InterfaceBuilder.md */,
 				22ABBF841F1A0F7200685821 /* Swift_Concept.md */,
-				22ABBF821F1A088400685821 /* CocoaPods.md */,
+				69ADE6311F1E5DBA0093FBD3 /* AutoLayout.md */,
 				22E8EC171F1C8F2B00A73727 /* RxSwift.md */,
 				22E8EC331F1C962C00A73727 /* Optional.swift */,
 			);
@@ -372,6 +379,10 @@
 		22ABBF8A1F1A104A00685821 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				69ADE6371F1E62860093FBD3 /* NSDictionary+XHLogHelper.h */,
+				69ADE6381F1E62860093FBD3 /* NSDictionary+XHLogHelper.m */,
+				69ADE6391F1E62860093FBD3 /* UIButton+ImageTitleSpacing.h */,
+				69ADE63A1F1E62860093FBD3 /* UIButton+ImageTitleSpacing.m */,
 				22E8EC2B1F1C94C600A73727 /* UIDevice+ScreenModel.swift */,
 				22ABBF8B1F1A104A00685821 /* String+Extension.swift */,
 				22ABBF8C1F1A104A00685821 /* UIColor+Extension.swift */,
@@ -788,6 +799,7 @@
 				22E8EC201F1C92E000A73727 /* POPViewController.swift in Sources */,
 				22ABC0051F1A153C00685821 /* CABasicAnimationController.swift in Sources */,
 				22ABC00A1F1A153C00685821 /* DashLine.m in Sources */,
+				69ADE63B1F1E62860093FBD3 /* NSDictionary+XHLogHelper.m in Sources */,
 				22B28A721F1DD87800BA3541 /* RxTableViewController.swift in Sources */,
 				22ABC01F1F1A153C00685821 /* SampleModel.swift in Sources */,
 				22ABC00E1F1A153C00685821 /* FireAnimController.swift in Sources */,
@@ -796,8 +808,8 @@
 				22ABC0211F1A153C00685821 /* ZNIBDesignableView.m in Sources */,
 				22ABC00B1F1A153C00685821 /* DrawViewController.m in Sources */,
 				22ABBF901F1A104A00685821 /* UIView+Extension.swift in Sources */,
+				69ADE63C1F1E62860093FBD3 /* UIButton+ImageTitleSpacing.m in Sources */,
 				22ABC01D1F1A153C00685821 /* BaseModel.swift in Sources */,
-				22ABBFCF1F1A12B100685821 /* InterfaceBuilder.md in Sources */,
 				22E8EC2E1F1C958800A73727 /* ListViewController.swift in Sources */,
 				69AB41C01F1BB32A003913BE /* RACSampleModel.m in Sources */,
 				22ABBF8E1F1A104A00685821 /* String+Extension.swift in Sources */,
@@ -812,11 +824,13 @@
 				22ABC00C1F1A153C00685821 /* GradientView.m in Sources */,
 				22ABBF8F1F1A104A00685821 /* UIColor+Extension.swift in Sources */,
 				22E8EC341F1C962C00A73727 /* Optional.swift in Sources */,
-				22ABBF831F1A088400685821 /* CocoaPods.md in Sources */,
+				69ADE6361F1E61A50093FBD3 /* Tool_Install.md in Sources */,
 				22ABBF701F1A038900685821 /* main.m in Sources */,
 				22ABC0041F1A153C00685821 /* AnimationController.swift in Sources */,
 				22ABBF871F1A0FF000685821 /* ZNSQLiteManager.swift in Sources */,
+				69ADE6341F1E60A20093FBD3 /* Command.md in Sources */,
 				22ABC0031F1A153C00685821 /* Animation.md in Sources */,
+				69ADE6321F1E5DBA0093FBD3 /* AutoLayout.md in Sources */,
 				22ABC0111F1A153C00685821 /* WaterWaveController.swift in Sources */,
 				22ABBF7C1F1A04AF00685821 /* AppDelegateServer.m in Sources */,
 				22E8EC1F1F1C92E000A73727 /* POPShakeable.swift in Sources */,
@@ -969,6 +983,31 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = DZNJ4F4E32;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AlamofireImage\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/IQKeyboardManagerSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/JLRoutes\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Masonry\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Moya\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/PINCache\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/PINOperation\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/PINRemoteImage\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/R.swift.Library\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/ReSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/ReactiveCocoa\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Result\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxCocoa\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxDataSources\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SnapKit\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftyJSON\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Texture\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/WCDB\"",
+					"$(SRCROOT)/Carthage/Build/iOS",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSwifter/Main/iOSwifter.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/iOSwifter/Main/Info.plist";
@@ -989,6 +1028,31 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = DZNJ4F4E32;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AlamofireImage\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/FMDB\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/IQKeyboardManagerSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/JLRoutes\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Masonry\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Moya\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/PINCache\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/PINOperation\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/PINRemoteImage\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/R.swift.Library\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/ReSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/ReactiveCocoa\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Result\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxCocoa\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxDataSources\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SnapKit\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftyJSON\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Texture\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/WCDB\"",
+					"$(SRCROOT)/Carthage/Build/iOS",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/iOSwifter/Main/iOSwifter.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/iOSwifter/Main/Info.plist";

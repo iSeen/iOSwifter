@@ -1,6 +1,8 @@
-# AutoLayout & SizeClass
+# AutoLayout
 
 ## AutoLayout
+	布局方式: Frame、Autoresizing Mask、Auto Layout，及 Mansory、SnapKit、PureLayout、CocoaUI 等第三方库;
+
 	布局重点: 先大后小，先整体后局部，先不变后可变;
 
 	layoutSubviews 负责布局，比如调整View之间的距离，大小;
@@ -17,6 +19,20 @@
 	IBOutlet
 	IBAction
 	IBOutletCollection(可以将界面上一组相同的控件连接到同一个数组中)
+
+	通过代码添加Constraint开始使用Autolayout,需要对使用的View的translatesAutoresizingMaskIntoConstraints的属性设置为NO.否则View还是会按照以往的autoresizingMask进行计算.
+	
+	在Interface Builder中勾选了Ues Autolayout,IB生成的控件的translatesAutoresizingMaskIntoConstraints属性都会被默认设置NO.
+
+### AutoLayout 关于更新部分方法的区别
+
+    setNeedsLayout：告知页面需要更新，但是不会立刻开始更新。执行后会立刻调用layoutSubviews。
+    layoutIfNeeded：告知页面布局立刻更新。所以一般都会和setNeedsLayout一起使用。如果希望立刻生成新的frame需要调用此方法，利用这点一般布局动画可以在更新布局后直接使用这个方法让动画生效。
+    layoutSubviews：系统重写布局
+    setNeedsUpdateConstraints：告知需要更新约束，但是不会立刻开始
+    updateConstraintsIfNeeded：告知立刻更新约束
+    updateConstraints：系统更新约束
+
 	
 ### Align：用来设置对齐相关的约束；
 
@@ -86,19 +102,8 @@
 	如果想要查看横屏/竖屏，点击设备下方的旋转按钮即可;
 
 
-# Masonry：替代 Autolayout
-布局方式: Frame、Autoresizing Mask、Auto Layout，及 Mansory、SnapKit、PureLayout、CocoaUI 等第三方库;
 
-
-例子：要使一个 subview 填充 superview，但和 superview 的边界间距（inset） 10 个像素。
-
-	UIEdgeInsets padding = UIEdgeInsetsMake(10, 10, 10, 10);
-    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(superview).with.insets(padding);
-    }];
-
-
-# 技巧
+## 开发技巧
 
 建议:
 团队协作开发/独立开发, 请为每一个屏幕使用一个单独的 StoryBoard;
@@ -270,14 +275,7 @@ StoryBoard 应用:
 	子View已经调整好
 	1.将子View拖动到父视图上, 无需重新调整, 选中这些控件，选择菜单栏上 Editor->Embed in->View/Scroll view, 最终控件还是按照原来样式排列在一个view上.
 	2.从父类view上移到另一个视图，选择Editor->Unembed 就可以.
-	
-	
-### Other
-	给必要的view关掉AutoresizeingMask
-	[_aView setTranslatesAutoresizingMaskIntoConstraints:NO];
-	
-	UILabel换行
-	linebreakMode, numberOfLines, preferredMaxLayoutWidth
+
 	
 ### UIScrollView 布局 (ContentSize复杂性)
 	1.添加UIScrollView约束, 上下首尾为0;
@@ -288,5 +286,193 @@ StoryBoard 应用:
 
 
 
+
+## Masonry
+### 基本使用
+	使用 mas_makeConstraints方法的元素必须先添加到父视图, 再进行约束.
+	mas_makeConstraints 内部无需弱引用self
+
+	mas_makeConstraints:添加约束
+	mas_updateConstraints：更新约束、亦可添加新约束
+	mas_remakeConstraints：重置之前的约束
 	
+	priorityLow()设置约束优先级
+
+等价概念:  
+
+	1.leading与left  trailing与right 在正常情况下是等价. 一般只用left和right,  用leading/trailing 后就不要用left/right，如果混用会出现崩溃.
+	2.mas_equalTo:  比equalTo多了类型转换操作, 适合用于数值元素
+	equalTo: 用于对象或是多个属性的处理, 尤其多个属性时，必须使用equalTo,例如 make.left.right.equalTo(self.view);
+
 	
+// 设置view的宽高比:
+
+	multipliedBy属性: 表示约束值为约束对象的乘因数
+	dividedBy属性表示: 约束值为约束对象的除因数
+
+	// 进行屏幕的适配的时候，往往需要根据屏幕宽度来适配一个相应的高度，在此推荐使用如下约束的方式来进行控件的适配
+	[self.topView addSubview:self.topInnerView];
+	[self.topInnerView mas_makeConstraints:^(MASConstraintMaker *make) {
+	    make.height.equalTo(self.topView.mas_height).dividedBy(3);
+	    make.width.and.height.lessThanOrEqualTo(self.topView);
+	    make.width.and.height.equalTo(self.topView).with.priorityLow();
+	    make.center.equalTo(self.topView);
+	}];
+
+全局宏的使用:
+    
+    #define MAS_SHORTHAND_GLOBALS 使用全局宏定义，可以使equalTo等效于mas_equalTo
+    #define MAS_SHORTHAND 使用全局宏定义, 可以在调用masonry方法的时候不使用mas_前缀
+	'#import "Masonry.h"' 头文件一定放在宏的后面;  
+
+	// 当使用了这个全局宏定义之后，发现可以有个类`NSArray+MASAdditions.h`，看了之后发现可以
+	self.buttonViews = @[raiseButton, lowerButton, centerButton];
+	// 之后可以在updateConstraints 方法中
+	- (void)updateConstraints {
+	   [self.buttonViews updateConstraints:^(MASConstraintMaker *make) {
+	        make.baseline.equalTo(self.mas_centerY).with.offset(self.offset);
+	    }];
+	    [super updateConstraints];  
+	}
+
+部分写法:  
+
+	距离self.view上下左右30
+	make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(30, 30, 30, 30));    
+
+	multipliedBy使用只能是设置同一个控件
+	[self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {  
+	      make.height.equalTo(self.titleLabel.mas_width).multipliedBy(3); 
+	}];
+
+
+动态修改视图约束:
+
+	// 创建视图约束
+	[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
+	      self.animatableConstraint = make.edges.equalTo(superview).insets(paddingInsets).priorityLow();
+	]];
+	// 更改约束 （另一处方法中）
+	UIEdgeInsets paddingInsets = UIEdgeInsetsMake(padding, padding, padding, padding);
+	self.animatableConstraint.insets = paddingInsets；
+	[self layoutIfNeeded];
+
+
+debug模式：约束控件发生冲突, 可设置View的key定位:
+	
+	// 对某个view添加key值
+	greenView.mas_key = @"greenView";
+	// 或者如下顺序
+	MASAttachKeys(greenView, redView, blueView, superview);
+	// 同样的对每条约束亦可以添加key
+	make.height.greaterThanOrEqualTo(@5000).key(@"ConstantConstraint");
+
+
+preferredMaxLayoutWidth: 多行label的约束问题
+ 
+	// 已经确认好了位置
+	// 在layoutSubviews中确认label的preferredMaxLayoutWidth值
+	- (void)layoutSubviews {
+	    [super layoutSubviews];
+	    // 你必须在 [super layoutSubviews] 调用之后，longLabel的frame有值之后设置preferredMaxLayoutWidth
+	    self.longLabel.preferredMaxLayoutWidth = self.frame.size.width-100;
+	    // 设置preferredLayoutWidth后，需要重新布局
+	    [super layoutSubviews];
+	}
+
+
+
+scrollView使用约束的问题：原理通过一个contentView来约束scrollView的contentSize大小，也就是说以子控件的约束条件，来控制父视图的大小
+
+	// 1. 控制scrollView大小（显示区域）
+	[self.scrollView makeConstraints:^(MASConstraintMaker *make) {
+	     make.edges.equalTo(self.view);
+	}];
+	// 2. 添加一个contentView到scrollView，并且添加好约束条件
+	[contentView makeConstraints:^(MASConstraintMaker *make) {
+	     make.edges.equalTo(self.scrollView);
+	     // 注意到此处的宽度约束条件，这个宽度的约束条件是比添加项
+	     make.width.equalTo(self.scrollView);
+	}];
+	// 3. 对contentView的子控件做好约束，达到可以控制contentView的大小
+
+
+
+新方法：2个或2个以上的控件等间隔排序
+
+	/**
+	 *  多个控件固定间隔的等间隔排列，变化的是控件的长度或者宽度值
+	 *
+	 *  @param axisType        轴线方向
+	 *  @param fixedSpacing    间隔大小
+	 *  @param leadSpacing     头部间隔
+	 *  @param tailSpacing     尾部间隔
+	 */
+	- (void)mas_distributeViewsAlongAxis:(MASAxisType)axisType 
+	                    withFixedSpacing:(CGFloat)fixedSpacing l
+	                          eadSpacing:(CGFloat)leadSpacing 
+	                         tailSpacing:(CGFloat)tailSpacing;
+	
+	/**
+	 *  多个固定大小的控件的等间隔排列,变化的是间隔的空隙
+	 *
+	 *  @param axisType        轴线方向
+	 *  @param fixedItemLength 每个控件的固定长度或者宽度值
+	 *  @param leadSpacing     头部间隔
+	 *  @param tailSpacing     尾部间隔
+	 */
+	- (void)mas_distributeViewsAlongAxis:(MASAxisType)axisType 
+	                 withFixedItemLength:(CGFloat)fixedItemLength 
+	                         leadSpacing:(CGFloat)leadSpacing 
+	                         tailSpacing:(CGFloat)tailSpacing;
+	
+	使用方法很简单，因为它是NSArray的类扩展：
+	
+	//  创建水平排列图标 arr中放置了2个或连个以上的初始化后的控件
+	//  alongAxis 轴线方向   固定间隔     头部间隔      尾部间隔
+	[arr mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:20 leadSpacing:5 tailSpacing:5];
+	[arr makeConstraints:^(MASConstraintMaker *make) {
+	       make.top.equalTo(@60);
+	       make.height.equalTo(@60);
+	}];
+
+
+当你的所有约束都在 updateConstraints 内调用的时候，你就需要在此调用此方法，因为 updateConstraints方法是需要触发的
+
+	// 调用在view 内部，而不是viewcontroller
+	+ (BOOL)requiresConstraintBasedLayout {
+	    return YES;
+	}
+	
+	/**
+	 *  苹果推荐 约束 增加和修改 放在此方法种
+	 */
+	- (void)updateConstraints {
+	    [self.growingButton updateConstraints:^(MASConstraintMaker *make) {
+	        make.center.equalTo(self);
+	        make.width.equalTo(@(self.buttonSize.width)).priorityLow();
+	        make.height.equalTo(@(self.buttonSize.height)).priorityLow();
+	        make.width.lessThanOrEqualTo(self);
+	        make.height.lessThanOrEqualTo(self);
+	    }];
+	    //最后记得回调super方法
+	    [super updateConstraints];
+	}
+
+如果想要约束变换之后实现动画效果，则需要执行如下操作
+
+    // 通知需要更新约束，但是不立即执行
+    [self setNeedsUpdateConstraints];
+    // 立即更新约束，以执行动态变换
+    // update constraints now so we can animate the change
+    [self updateConstraintsIfNeeded];
+    // 执行动画效果, 设置动画时间
+    [UIView animateWithDuration:0.4 animations:^{
+       [self layoutIfNeeded];
+    }];
+
+
+
+
+
+
