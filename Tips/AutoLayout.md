@@ -471,7 +471,7 @@ scrollView使用约束的问题：原理通过一个contentView来约束scrollVi
        [self layoutIfNeeded];
     }];
 
-
+获取masonry布局控件的frame, 调用其父控件的layoutIfNeeded方法。
 
 
 
