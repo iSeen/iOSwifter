@@ -2,13 +2,26 @@ PODS:
   - Alamofire (4.4.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
+  - APAddressBook (0.3.1):
+    - APAddressBook/Core (= 0.3.1)
+  - APAddressBook/Core (0.3.1)
+  - Bugly (2.4.8)
+  - DACircularProgress (2.3.1)
+  - DZNEmptyDataSet (1.8.1)
   - FBRetainCycleDetector (0.1.3)
+  - FDFullscreenPopGesture (1.1)
+  - FDStackView (1.0)
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
+  - INTULocationManager (4.2.0)
   - IQKeyboardManagerSwift (4.0.9)
+  - JDStatusBarNotification (1.5.5)
   - JLRoutes (2.0.5)
   - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.12)
   - MLeaksFinder (0.2.1):
     - FBRetainCycleDetector
   - Moya (8.0.3):
@@ -16,6 +29,11 @@ PODS:
   - Moya/Core (8.0.3):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
   - PINCache (3.0.1-beta.4):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.4)
     - PINCache/Core (= 3.0.1-beta.4)
@@ -49,6 +67,11 @@ PODS:
     - RxCocoa (~> 3.0)
     - RxSwift (~> 3.0)
   - RxSwift (3.4.0)
+  - SDCycleScrollView (1.65):
+    - SDWebImage (~> 3.7)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - SnapKit (3.0.2)
   - SwiftyJSON (3.1.4)
   - Texture (2.3):
@@ -58,38 +81,68 @@ PODS:
     - PINRemoteImage/iOS (= 3.0.0-beta.9)
     - PINRemoteImage/PINCache
     - Texture/Core
+  - TZImagePickerController (1.8.3)
+  - UIViewController+Swizzled (1.4)
   - WCDB (1.0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - AlamofireImage (~> 3.1)
+  - APAddressBook
+  - Bugly
+  - DACircularProgress
+  - DZNEmptyDataSet
+  - FDFullscreenPopGesture
+  - FDStackView
   - FMDB
+  - INTULocationManager
   - IQKeyboardManagerSwift
+  - JDStatusBarNotification
   - JLRoutes (~> 2.0.5)
   - Masonry
+  - MBProgressHUD
+  - MJExtension
+  - MJRefresh
   - MLeaksFinder
   - Moya
+  - NJKWebViewProgress
   - R.swift
   - ReactiveCocoa (~> 2.5)
   - ReSwift
   - RxCocoa (~> 3.0)
   - RxDataSources (~> 1.0)
   - RxSwift (~> 3.0)
+  - SDCycleScrollView
+  - SDWebImage (~> 3.8.0)
   - SnapKit (~> 3.0.2)
   - SwiftyJSON
   - Texture
+  - TZImagePickerController
+  - UIViewController+Swizzled
   - WCDB
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  APAddressBook: f7e50fce276ae975c202b83b0ee98f4efde5a104
+  Bugly: da3c02408c14838d498429320545a8e439392978
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  FDStackView: 3a4bbe0ce9c35e974246a585168b9da8c32213f1
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  INTULocationManager: 73f8254b3d05c897c56bb13c190e5b7c648c0998
   IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
+  JDStatusBarNotification: 2b4f29bd68a60d7aa2f190b5265f1ce59c18aaf8
   JLRoutes: 2a5ee61d739b51a98c9d8112bee5149a19de8854
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MLeaksFinder: '0850e2f2abc7227adc4d4e2d1992b431264eb4d5'
   Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   PINCache: a89c8f609232afac77128557bd12c861844423d7
   PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
   PINRemoteImage: e4e02e15a6f96cedbcef2abf1c9c1228dc9897d7
@@ -101,11 +154,15 @@ SPEC CHECKSUMS:
   RxCocoa: d14ef6b6029e1ddc6e966508c09289090de68ff9
   RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
   RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
+  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   Texture: de523401d6c296e63249021246a95bf7f90b3d9c
+  TZImagePickerController: 8c02d10822404b26c4330cdb79f2e46fb6a61473
+  UIViewController+Swizzled: 1cd9397598ede6930f94fbcac4b43d63c7aa0dbb
   WCDB: 78aff489677b50a4f2ebbf4df4bab5116c9665b1
 
-PODFILE CHECKSUM: 7f591fb7fba9f014a0c219216beaab58d91a6c3a
+PODFILE CHECKSUM: 4c262fe7e4103d68e880681c114fefebce7b6055
 
 COCOAPODS: 1.2.1

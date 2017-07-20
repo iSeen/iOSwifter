@@ -18,12 +18,17 @@ end
 def netWorkData_pods
     pod 'Alamofire', '~> 4.4'
     pod 'Moya'
+    
     pod 'AlamofireImage', '~> 3.1'
+    pod 'SDWebImage','~>3.8.0'
 
     pod 'SwiftyJSON'
     
     pod 'ReSwift'
-
+    pod 'MJRefresh'
+    pod 'MJExtension'
+    pod 'DZNEmptyDataSet'
+    
     pod 'WCDB'
     pod 'FMDB'
 #    pod 'Realm'
@@ -33,12 +38,24 @@ end
 
 # UI
 def ui_pods
+    pod 'JDStatusBarNotification'
+    pod 'NJKWebViewProgress'
+    pod 'DACircularProgress'
+    
 #    pod 'RAMAnimatedTabBarController'
-#    pod 'SDCycleScrollView','~> 1.66'
+    pod 'TZImagePickerController'
+    pod 'UIViewController+Swizzled'
+    pod 'FDFullscreenPopGesture'
+    
+    pod 'SDCycleScrollView'
+    pod 'FDStackView'
+
+    pod 'MBProgressHUD'
 
     pod 'Texture'
     pod 'IQKeyboardManagerSwift'
-    
+#    pod 'IQKeyboardManager'
+
     pod 'Masonry'
     pod 'SnapKit', '~> 3.0.2'
 end
@@ -46,6 +63,10 @@ end
 
 # other
 def other_pods
+    pod 'INTULocationManager'
+    pod 'APAddressBook'
+    pod 'Bugly'
+    
     pod 'R.swift'
     pod 'JLRoutes', '~> 2.0.5'
     pod 'MLeaksFinder'
