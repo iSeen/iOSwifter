@@ -221,8 +221,15 @@ StoryBoard 应用:
 
 
 ### Content Hugging Priority和Content Compression Resistance
-	“Content Hugging Priority”，也叫内容紧靠优先级（小名：别扯我），该优先级越高，这越晚轮到被拉伸。 设置view 有多大愿意（优先级），愿意显示里面内容之外的部分。
-	“Content Compression Resistance Priority”，也叫内容压缩阻力优先级（小名：别挤我），该优先级越高，则越晚轮到被压缩。 设置view有多大意愿（优先级），愿意压缩里面的内容。
+	父view大小太大时:
+	Content Hugging Priority(内容紧靠优先级), 增大, 可防止被拉伸.
+	
+	[label setContentHuggingPriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
+	
+	父view大小不够布局子label时:
+	Content Compression Resistance Priority(内容压缩阻力优先级), 增大, 可防止被压缩.
+	
+
 
 ### 代码布局
     1.

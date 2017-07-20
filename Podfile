@@ -46,8 +46,9 @@ end
 
 # other
 def other_pods
-  pod 'R.swift'
-  pod 'JLRoutes', '~> 2.0.5'
+    pod 'R.swift'
+    pod 'JLRoutes', '~> 2.0.5'
+    pod 'MLeaksFinder'
 end
 
 
