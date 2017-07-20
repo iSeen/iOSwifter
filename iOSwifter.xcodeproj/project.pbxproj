@@ -72,6 +72,7 @@
 		22E8EC321F1C960300A73727 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E8EC311F1C960300A73727 /* Singleton.swift */; };
 		22E8EC341F1C962C00A73727 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E8EC331F1C962C00A73727 /* Optional.swift */; };
 		22E8EC361F1C99EE00A73727 /* iOS11_Xcode9.md in Sources */ = {isa = PBXBuildFile; fileRef = 22E8EC351F1C99EE00A73727 /* iOS11_Xcode9.md */; };
+		695998281F1FB44B0013AB9C /* Dev_Skill.md in Sources */ = {isa = PBXBuildFile; fileRef = 695998271F1FB44B0013AB9C /* Dev_Skill.md */; };
 		69AB41BF1F1BB32A003913BE /* RACSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AB41B51F1BB32A003913BE /* RACSampleViewController.m */; };
 		69AB41C01F1BB32A003913BE /* RACSampleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AB41B81F1BB32A003913BE /* RACSampleModel.m */; };
 		69AB41C11F1BB32A003913BE /* RACSampleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69AB41BB1F1BB32A003913BE /* RACSampleViewModel.m */; };
@@ -194,6 +195,7 @@
 		22E8EC311F1C960300A73727 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		22E8EC331F1C962C00A73727 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		22E8EC351F1C99EE00A73727 /* iOS11_Xcode9.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = iOS11_Xcode9.md; sourceTree = "<group>"; };
+		695998271F1FB44B0013AB9C /* Dev_Skill.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Dev_Skill.md; sourceTree = "<group>"; };
 		69AB41B41F1BB329003913BE /* RACSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSampleViewController.h; sourceTree = "<group>"; };
 		69AB41B51F1BB32A003913BE /* RACSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACSampleViewController.m; sourceTree = "<group>"; };
 		69AB41B71F1BB32A003913BE /* RACSampleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSampleModel.h; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				22ABBF581F1A031B00685821 /* UIView.h */,
 				22ABBF591F1A031B00685821 /* Xcode.h */,
 				22ABBF911F1A113200685821 /* Image.h */,
+				695998271F1FB44B0013AB9C /* Dev_Skill.md */,
 				22B28A751F1DDD1000BA3541 /* DevTool.md */,
 				69ADE6351F1E61A50093FBD3 /* Tool_Install.md */,
 				22E8EC351F1C99EE00A73727 /* iOS11_Xcode9.md */,
@@ -808,6 +811,7 @@
 				22ABC0211F1A153C00685821 /* ZNIBDesignableView.m in Sources */,
 				22ABC00B1F1A153C00685821 /* DrawViewController.m in Sources */,
 				22ABBF901F1A104A00685821 /* UIView+Extension.swift in Sources */,
+				695998281F1FB44B0013AB9C /* Dev_Skill.md in Sources */,
 				69ADE63C1F1E62860093FBD3 /* UIButton+ImageTitleSpacing.m in Sources */,
 				22ABC01D1F1A153C00685821 /* BaseModel.swift in Sources */,
 				22E8EC2E1F1C958800A73727 /* ListViewController.swift in Sources */,
