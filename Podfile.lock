@@ -49,9 +49,6 @@ PODS:
   - PINRemoteImage/PINCache (3.0.0-beta.9):
     - PINCache (= 3.0.1-beta.4)
     - PINRemoteImage/Core
-  - R.swift (3.2.0):
-    - R.swift.Library (~> 3.0.2)
-  - R.swift.Library (3.0.2)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -84,6 +81,9 @@ PODS:
   - TZImagePickerController (1.8.3)
   - UIViewController+Swizzled (1.4)
   - WCDB (1.0.2)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -106,7 +106,6 @@ DEPENDENCIES:
   - MLeaksFinder
   - Moya
   - NJKWebViewProgress
-  - R.swift
   - ReactiveCocoa (~> 2.5)
   - ReSwift
   - RxCocoa (~> 3.0)
@@ -120,6 +119,7 @@ DEPENDENCIES:
   - TZImagePickerController
   - UIViewController+Swizzled
   - WCDB
+  - YYKit
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -146,8 +146,6 @@ SPEC CHECKSUMS:
   PINCache: a89c8f609232afac77128557bd12c861844423d7
   PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
   PINRemoteImage: e4e02e15a6f96cedbcef2abf1c9c1228dc9897d7
-  R.swift: 207a372a2b5977caef440c696a368009460641d1
-  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   ReSwift: f058ef13b46ae5f463f10605ccbbb7fb04424d8d
@@ -162,7 +160,8 @@ SPEC CHECKSUMS:
   TZImagePickerController: 8c02d10822404b26c4330cdb79f2e46fb6a61473
   UIViewController+Swizzled: 1cd9397598ede6930f94fbcac4b43d63c7aa0dbb
   WCDB: 78aff489677b50a4f2ebbf4df4bab5116c9665b1
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 4c262fe7e4103d68e880681c114fefebce7b6055
+PODFILE CHECKSUM: 3e3d25d269c88c562463cae8a5cf253729ece896
 
 COCOAPODS: 1.2.1

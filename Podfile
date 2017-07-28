@@ -63,11 +63,13 @@ end
 
 # other
 def other_pods
+    pod 'YYKit'
+    
     pod 'INTULocationManager'
     pod 'APAddressBook'
     pod 'Bugly'
     
-    pod 'R.swift'
+#    pod 'R.swift'
     pod 'JLRoutes', '~> 2.0.5'
     pod 'MLeaksFinder'
 end
