@@ -5,11 +5,15 @@
 [安装](#安装)    
 [常用命令](#常用命令)  
 [Podfile](#Podfile)  
+[Private Spec Repo](#Private Spec Repo)  
 [Carthage依赖管理](#Carthage依赖管理)  
 [参考文章](#参考文章)
 
 ## <a id="原理"></a>原理
-将所有的依赖库都放到另一个名为Pods的项目中，然后让主项目依赖Pods项目，这样，源码管理工作都从主项目移到了Pods项目中。Pods项目最终会编译成一个名为libPods.a的文件，主项目只需要依赖这个.a文件即可。
+	将所有的依赖库都放到另一个名为Pods的项目中，然后让主项目依赖Pods项目，这样，源码管理工作都从主项目移到了Pods项目中。
+	1.Pods 项目最终会编译成一个名为 libPods.a 的文件，主项目只需要依赖这个 .a 文件即可。
+	2.对于资源文件，CocoaPods 提供了一个名为 Pods-resources.sh 的 bash 脚本，该脚本在每次项目编译的时候都会执行，将第三方库的各种资源文件复制到目标目录中。
+	3.CocoaPods 通过一个名为 Pods.xcconfig 的文件来在编译时设置所有的依赖和参数。
 
 
 ## <a id="安装"></a>安装
@@ -61,8 +65,9 @@
 
 ### Cocoapods 依赖管理
 #### Cocoapods安装:
-	
-	安装最新版本
+	pod --version 查看当前安装版本号
+
+	1)安装最新版本
 	sudo gem install cocoapods  
 	备注：苹果系统升级 OSX EL Capitan 后改为 sudo gem install -n /usr/local/bin cocoapods
 	
@@ -70,8 +75,9 @@
 	sudo gem install cocoapods -v 1.1.1   
 	或: sudo gem install -n /usr/local/bin cocoapods -v 1.1.1
 	
-	pod setup    将整个specs仓库clone下载到本地 ~/.cocoapods目录
+	2)pod setup    将整个specs仓库clone下载到本地 ~/.cocoapods目录
 	
+	Ps:
 	若耗时严重可参考以下方法更换CocoaPods镜像索引:
 	所有项目的Podspec文件都托管在 https://github.com/CocoaPods/Specs,
 	第一次执行pod setup时,CocoaPods会将这些podspec索引文件更新到本地的~/.cocoapods目录下, 这个索引文件比较大,所以第一次更新时非常慢.
@@ -86,9 +92,7 @@
 	查看进度: 新窗口打开终端, 执行以下命令
 	cd  ~/.cocoapods   
 	du -sh * 
-	
-	pod --version 查看当前安装版本号
-	
+		
 #### CocoaPods卸载 / 升级 / 安装指定版本:
 卸载
 
@@ -147,7 +151,6 @@
 	
 	1.build active architecture only 在debug的时候设置成YES，不要在release的时候用模拟器
 	2.other linker flags 加一个 $(inherited)
-
 
 Q1: Unable to find a specification for   
 
@@ -285,6 +288,76 @@ CocoaPods通过Ruby实现, Podfile也是通过ruby语法编写.
 	  //在Podfile添加多行注释
 	=end
 	
+## <a id="Private Spec Repo"></a>Private Spec Repo
+### 创建私有Spec Repo管理项目公共组件
+
+	1.创建并设置一个私有的Spec Repo。
+	2.创建Pod的所需要的项目工程文件，并且有可访问的项目版本控制地址。
+	3.创建Pod所对应的podspec文件。
+	4.本地测试配置好的podspec文件是否可用。
+	5.向私有的Spec Repo中提交podspec。
+	6.在个人项目中的Podfile中增加刚刚制作的好的Pod并使用。
+	7.更新维护pod spec。
+
+
+#### 一、创建私有 Spec Repo
+	
+	>> 查看本地 pod spec仓库
+	$ pod repo
+	或:
+	$ cd ~/.cocoapods/repos
+	$ ls 查看repos列表
+	
+	>> 新建 pod spec 仓库
+	$ pod repo add [Private Repo Name] [Your GitHub HTTPS clone URL]
+	pod repo add ZNSpecs https://github.com/iSeen/ZNSpecs.git
+	
+	>> 下载Cocoapods模板 (过程中会有一些选项，按需选择即可。模板下载完成后会自动打开工程。你会在Pods->Pods-> YourPod的目录先看见ReplaceMe.m的文件。该文件是无用的文件，可以将它删除，并编写你自己的代码。)
+	$ pod lib create ZNPods
+	项目目录结构:
+	1.Podspec metadata：可更改 README 和 MyLibrary.podspec
+	2.Example for PrivateRepo：可编写测试文件
+	3.Tests：测试模块
+	4.Development Pods：编写代码，用代码代替ReplaceMe.m文件
+	5.Frameworks：
+	若已写好库，想写测试模块或者测试demo的时候，首先进入Example文件夹执行pod update命令，打开工程包含 #import <ZNPods/XYZ.h>
+	Ps:当你更改了Pod/Classes或者Pod/Assets或者更新了pod spec，你应该执行pod install命令或者 pod update。
+
+	创建.podspec文件
+	$ pod spec create ZNPods
+
+	>> 本地检查.podspec合法性
+	$ pod lib lint
+	>> 远程检查.podspec合法性
+	$ pod spec lint
+	
+	>> 将您的pod工程提交至仓库YourPodRepositoryURL
+	新建一个标签（tag）为1.0。（与podspec里的版本保持一致）
+	Ps:
+	YourPodSpecRepositoryURL: 保存pod spec文件的仓库;  
+	YourPodRepositoryURL: 保存pod工程的仓库.	
+	>> 将pod spec文件提交至 私有spec仓库
+	pod repo push YourPodSpecRepositoryName YourPod.podspec
+
+#### 二. 使用私有pods
+	新建一个工程并创建Podfile, pod search YourPod, pod install.
+
+#### 三.坑	
+
+	查看详细错误信息
+	pod spec lint ZNPods.podspec --verbose
+	
+	? swift版本问题
+	echo "3.0" > .swift-version
+		
+	? uninitialized constant REST Disconnected Error
+	显示链接错误, 设置默认 rvm use ruby-2.3.4 --default
+	
+	? pod install [!] Unable to find a specification for xxx
+	Podfile 文件加入两个: (不加source, 默认搜索官方, 加source, 取消默认)
+	source 'https://github.com/CocoaPods/Specs.git'     #官方仓库地址
+	source 'https://github.com/iSeen/ZNSpecs.git'       #私有仓库地址
+	
 
 ## <a id="Carthage依赖管理"></a>Carthage依赖管理
 优势:
@@ -312,4 +385,14 @@ CocoaPods通过Ruby实现, Podfile也是通过ruby语法编写.
 [Cocoapods版本更新](http://www.cnblogs.com/MJchen/p/6097278.html)
 
 [Cocoa 新的依赖管理工具：Carthage](http://www.isaced.com/post-265.html)
+
+[语义化版本 2.0.0](http://semver.org/lang/zh-CN/)
+
+[使用私有Cocoapods仓库 中高级用法](http://www.jianshu.com/p/d6a592d6fced)  
+[工程支持cocoapods](http://www.jianshu.com/p/8a7b9232cbab)  
+[Cocoapods使用私有库中遇到的坑](http://www.jianshu.com/p/1e5927eeb341)
+
+
+
+
 

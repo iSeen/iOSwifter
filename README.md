@@ -30,6 +30,9 @@ Crash
 [PLCrashReporter](https://www.plcrashreporter.org)
 [Bugly](https://bugly.qq.com/v2/index)
 
+Mac软件  
+[Xclient](http://xclient.info/?_=56c23b09a721ded3b7709433aee7daff)
+
 ## iOS
 [iOS11 & Xcode9 开发适配](https://github.com/iSeen/iOSwifter/blob/master/Tips/iOS11_Xcode9.md)  
 [iOS10 & Xcode8 开发适配](https://github.com/iSeen/iOS10_Tips)  
