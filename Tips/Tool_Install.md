@@ -23,7 +23,7 @@
 安装:
 
 	 ->  Press RETURN to continue or any other key to abort      出现这个回车  
-	 ->  Password:     　　　　　　　               设置密码  
+	 ->  Password:     　　　　　　　               输入电脑开机密码  
 	 ->  Downloading and installing Homebrew...  等待...  
 
 使用:  
@@ -32,24 +32,22 @@
 	安装软件：brew install "软件名"	
 	卸载软件：brew remove "软件名"
 	
-### RVM (Ruby Version Manager) 安装和控制Ruby版本的工具
-安装:
-
-	curl -L get.rvm.io | bash -s stable   安装 RVM baby 版本管理器,安装完成出现提示 Incaseofproblems:...
-	source ~/.bashrc
-	source ~/.bash_profile
-	
-	rvm -v 查询rvm版本号, 检查是否安装  
-
 ### Ruby 面向对象的脚本语言
-安装:
+使用[RVM](http://www.rvm.io) (Ruby Version Manager: Ruby版本管理工具)安装
 
-	ruby -v 查看ruby版本  
-	rvm list 查询已安装的ruby  
-	rvm list known 列出已知的ruby版本  
-	rvm install [版本号]  安装一个ruby版本  
-	rvm remove [版本号] 卸载该版本ruby  
-	rvm use 2.2.2 --default 设置Ruby默认版本(重要!)
+	$ curl -L get.rvm.io | bash -s stable   安装 RVM
+	$ source ~/.rvm/scripts/rvm   指定源
+	$ rvm -v    查询rvm版本号, 检查是否安装  
+	$ rvm implode  rvm 删除
+	
+	$ rvm list 查询已安装的ruby  
+	$ rvm list known 列出已知的ruby版本  
+	$ rvm install [版本号]  安装一个ruby版本  
+	$ rvm remove  [版本号]  卸载该版本ruby  
+	$ rvm use ruby-2.4.0 --default 设置Ruby默认版本(重要!) 
+	  或 $ rvm alias create default 2.0.0
+
+	$ ruby -v 查看ruby版本  
 
 ### RubyGems (Mac自带)
 简称 gems, 是一个用于对 Ruby组件进行打包的 Ruby 打包系统。 它提供一个分发 Ruby 程序和库的标准格式，还提供一个管理程序包安装的工具。  
